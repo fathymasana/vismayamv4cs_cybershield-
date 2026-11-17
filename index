@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield | Security Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">CYBER<span>SHIELD</span></div>
+    <div class="status">● SYSTEM SECURE</div>
+</nav>
+
+<main class="hero">
+    <div class="tag">CYBERSECURITY INTELLIGENCE LAB</div>
+
+    <h1>Welcome to <span>Encryption Lab</span></h1>
+
+    <p class="subtitle">
+        Discover how cybersecurity protects messages
+        from unauthorized access.
+    </p>
+
+    <div class="shield">🛡️</div>
+
+    <h2>Mission: Protect the Message</h2>
+
+    <p>
+        Can you transform an ordinary message into
+        protected digital information and recover it
+        using the correct secret key?
+    </p>
+
+    <div class="button-group">
+        <a href="encrypt.html" class="btn primary">
+            🔒 START ENCRYPTION
+        </a>
+
+        <a href="decrypt.html" class="btn secondary">
+            🔓 OPEN DECRYPTION
+        </a>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <h3>01</h3>
+            <strong>Encryption</strong>
+            <p>Convert a message into protected data.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>02</h3>
+            <strong>Secret Key</strong>
+            <p>A key used to unlock protected information.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>03</h3>
+            <strong>Decryption</strong>
+            <p>Recover the original message.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    © 2026 CYBERSHIELD | Encryption Intelligence Lab
+</footer>
+
+</body>
+</html>
