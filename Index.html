@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield Firewall Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <span class="brand-icon">🛡️</span>
+        <div>
+            <strong>CYBERSHIELD</strong>
+            <small>FIREWALL SIMULATOR</small>
+        </div>
+    </div>
+    <div class="status">● SIMULATION ACTIVE</div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <p class="eyebrow">NETWORK SECURITY CONTROL CENTER</p>
+        <h1>Firewall <span>Traffic Monitor</span></h1>
+        <p class="intro">
+            Inspect network requests, apply security rules
+            and see how a firewall protects a network.
+        </p>
+    </section>
+
+    <!-- STATISTICS -->
+    <section class="stats">
+
+        <div class="stat-card">
+            <span>TOTAL REQUESTS</span>
+            <h2 id="totalCount">0</h2>
+        </div>
+
+        <div class="stat-card allowed">
+            <span>ALLOWED</span>
+            <h2 id="allowedCount">0</h2>
+        </div>
+
+        <div class="stat-card blocked">
+            <span>BLOCKED</span>
+            <h2 id="blockedCount">0</h2>
+        </div>
+
+    </section>
+
+    <!-- FIREWALL INPUT -->
+    <section class="workspace">
+
+        <div class="panel">
+
+            <h2>Submit Network Request</h2>
+
+            <form id="trafficForm">
+
+                <label>Select Scenario</label>
+
+                <select id="scenario">
+                    <option value="normal">Normal Website Access</option>
+                    <option value="unknown">Unknown Device</option>
+                    <option value="restricted">Restricted Port</option>
+                    <option value="dns">DNS Request</option>
+                    <option value="custom">Custom Request</option>
+                </select>
+
+                <div class="form-grid">
+
+                    <div>
+                        <label>Source IP Address</label>
+                        <input type="text" id="sourceIp"
+                        value="192.168.1.10" required>
+                    </div>
+
+                    <div>
+                        <label>Destination Port</label>
+                        <input type="number" id="destinationPort"
+                        value="443" min="1" max="65535" required>
+                    </div>
+
+                    <div>
+                        <label>Protocol</label>
+                        <select id="protocol">
+                            <option>HTTPS</option>
+                            <option>HTTP</option>
+                            <option>DNS</option>
+                            <option>SSH</option>
+                            <option>OTHER</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Direction</label>
+                        <select id="direction">
+                            <option>OUTBOUND</option>
+                            <option>INBOUND</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    🔍 INSPECT TRAFFIC
+                </button>
+
+            </form>
+
+            <div class="rule-note">
+                <h3>Firewall Security Rules</h3>
+                <ul>
+                    <li>Allow trusted devices.</li>
+                    <li>Allow approved ports 80, 443 and 53.</li>
+                    <li>Block restricted port 23.</li>
+                    <li>Block unknown devices.</li>
+                    <li>Block all other unapproved requests.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- FIREWALL RESULT -->
+
+        <div class="panel">
+
+            <h2>Firewall Decision Center</h2>
+
+            <div id="decisionBox" class="decision-box">
+
+                <div id="decisionIcon">🛡️</div>
+
+                <h2 id="decisionTitle">
+                    Waiting for Traffic
+                </h2>
+
+                <p id="decisionText">
+                    Submit a request to inspect network traffic.
+                </p>
+
+            </div>
+
+            <div class="details">
+
+                <p>Source IP:
+                    <strong id="detailSource">---</strong>
+                </p>
+
+                <p>Port / Protocol:
+                    <strong id="detailPort">---</strong>
+                </p>
+
+                <p>Matched Rule:
+                    <strong id="detailRule">---</strong>
+                </p>
+
+            </div>
+
+            <p class="warning">
+                Educational simulation only.
+                No real network traffic is blocked.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ACTIVITY LOG -->
+
+    <section class="panel log-panel">
+
+        <div class="log-heading">
+            <h2>Network Activity Log</h2>
+            <button id="clearLog" class="secondary-btn">
+                Clear Log
+            </button>
+        </div>
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>TIME</th>
+                        <th>SOURCE IP</th>
+                        <th>PORT</th>
+                        <th>PROTOCOL</th>
+                        <th>DECISION</th>
+                        <th>RULE</th>
+                    </tr>
+                </thead>
+
+                <tbody id="eventLog">
+                    <tr>
+                        <td colspan="6">
+                            No network requests yet.
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    CYBERSHIELD FIREWALL SIMULATOR
+    <br>
+    College Cybersecurity Exhibition Project
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+      </html>
